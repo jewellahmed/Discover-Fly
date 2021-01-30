@@ -28,7 +28,7 @@
 
     <!--Booking Section-->
     <main class="main-content container">
-        <div class="booking-form">
+        <div class="booking-form" id="disappear">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -55,7 +55,9 @@
 
             </div>
           <div class="plus-minus-btn">
-                <p> <span onclick="handleClass('first',true)">+</span> <span onclick="handleClass('first',false)">-</span> </p>
+                <p> <span onclick="handleClass('first',true)"class="btn-style">+</span>
+                    <br>
+                     <span onclick="handleClass('first',false)"class="btn-style">-</span> </p>
             
         </div>
     </div>
@@ -65,7 +67,9 @@
                     <input id="economy-count" class="inp-style inp-width" type="number" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span onclick="handleClass('economy',true)">+</span> <span onclick="handleClass('economy',false)">-</span> </p>
+                    <p > <span onclick="handleClass('economy',true)"class="btn-style">+</span>
+                        <br>
+                         <span onclick="handleClass('economy',false)"class="btn-style">-</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -74,7 +78,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="sub-total">$500</p>
+                        <p id="sub-total">$0</p>
                     </div>
                 </div>
 
@@ -83,7 +87,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p id="vat-amount">$50</p>
+                        <p id="vat-amount">$0</p>
                     </div>
                 </div>
                 <hr>
@@ -92,20 +96,25 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p id="total">$550</p>
+                        <p id="total">$0</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="confirmation" class="btn-style" >Book Now</button>
         </div>
 
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
         </div>
+        <div id="confirm" class="confirmation">
+            <h3>Your purchase successful</h3>
+            <h3>Have a nice journey</h3>
+
+        </div>
         </main>
         <script>
-
+//calculate sub-cost
 function handleClass(type,isIncrease){
 
 const classInput = document.getElementById(type + '-count');
@@ -133,7 +142,7 @@ if(type == 'economy'){
 calculateTotal();
 
 }
-
+//claculate total-Cost
 
 function calculateTotal(){
 
@@ -159,12 +168,28 @@ function getInputValue(type){
     return classCount;
 
 }
+//confirmation text
+
+const bookingTicket = document.getElementById('confirmation');
+bookingTicket.addEventListener('click',function(){
+
+
+    const bookingArea = document.getElementById('disappear');
+    bookingArea.style.display = "none";
+
+    const confirmText = document.getElementById('confirm');
+    confirmText.style.display = "block";
+
+    const firstClass = document.getElementById('');
+    firstClass.style.display = "block";
 
 
 
-        </script>
+})
 
 
+
+ </script>
     
 </body>
 

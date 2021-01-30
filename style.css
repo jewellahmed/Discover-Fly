@@ -120,3 +120,22 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+#confirm{
+
+    display: none;
+
+
+}
+.confirmation{
+
+    box-shadow: 5px 5px 10px grey;
+    border-radius: 10px;
+    background-color: rgb(58, 184, 146);
+    padding: 40px;
+
+}
+.confirmation h3{
+
+    font-size: 30px;
+    color:black;
+}
